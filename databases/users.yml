@@ -1,0 +1,12 @@
+---
+:login: admin
+:password: '111'
+:role: Admin
+---
+:login: CarlJohnson
+:password: grovestreet
+:role: User
+---
+:login: super
+:password: '111'
+:role: Superadmin

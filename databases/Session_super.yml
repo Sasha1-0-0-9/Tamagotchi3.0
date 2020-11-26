@@ -1,0 +1,14 @@
+--- !ruby/object:Duck
+login: super
+password: '111'
+role: Superadmin
+name: Viktor
+money: 100
+asleep: 0
+happiness: 100
+satiety: 100
+cleanliness: 100
+health: 100
+energy: 100
+emoji: "&#128515;"
+html: !ruby/object:ShowHTML {}
