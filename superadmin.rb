@@ -70,10 +70,10 @@ class Superadmin < User
   		when "new_login"
   			pet.change_login
   			x = gets.chomp.to_s
-  		when "HESOYAM"
-				pet.add_money
-				x = gets.chomp.to_s
-  		when  "help"
+      when "HESOYAM"
+        pet.add_money
+        x = gets.chomp.to_s
+      when  "help"
   			puts pet.help
   			x = gets.chomp.to_s
   		else
