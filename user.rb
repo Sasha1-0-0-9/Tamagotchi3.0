@@ -1,6 +1,7 @@
 require 'yaml'
 
 class User
+
 	attr_accessor :login, :password
 	def initialize(login, password)
 		@login = login
@@ -29,7 +30,7 @@ class User
 				puts pet.show_stats
 				x = gets.chomp.to_s
 			when "5"
-				pet.heal()
+				pet.heal
 				puts pet.show_stats
 				x = gets.chomp.to_s
 			when "6"
@@ -60,10 +61,10 @@ class User
 
 	def save
 		user = {
-      login: @login,
-      password: @password,
-      role: self.class.to_s
-    }
-      File.open('./databases/users.yml', 'a') { |file| file.puts(user.to_yaml) }
-  end
+			login: @login,
+			password: @password,
+			role: self.class.to_s
+		}
+		File.open('./databases/users.yml', 'a') { |file| file.puts(user.to_yaml) }
+	end
 end

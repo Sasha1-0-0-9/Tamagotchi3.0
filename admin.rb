@@ -1,5 +1,5 @@
-
 class Admin < User
+
 	def initialize(login, password)
 		@login = login
 		@password = password
@@ -8,6 +8,7 @@ class Admin < User
 		new_name to change your pet's name
 		money to change pet's money balance"
 	end
+
 	def commands(pet)
 		x = gets.chomp.to_s
 		while x != "0"
