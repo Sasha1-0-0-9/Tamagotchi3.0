@@ -152,6 +152,7 @@ class Duck < Ui
   def change_name
     new_name = gets.chomp.to_s
     @name = new_name
+    @html.html_for_pet(@name, return_array, @emoji)
   end
 
   def checking # проверка состояния питомца
@@ -268,6 +269,8 @@ class Duck < Ui
     @cleanliness = 100
     @health = 100
     @energy = 100
+    @emoji = '&#128515;'
+    @html.html_for_pet(@name, return_array, @emoji)
   end
 
   def change_login
@@ -291,7 +294,7 @@ class Duck < Ui
     #{@name}'s cleanliness: #{@cleanliness}
     #{@name}'s health: #{@health}
     #{@name}'s energy: #{@energy}
-    #{@name}'s money: #{@money}"
+    #{@name}'s money: #{@money}$"
   end
 
   def change_values
@@ -310,6 +313,7 @@ class Duck < Ui
         @happiness = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -321,6 +325,7 @@ class Duck < Ui
         @satiety = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -332,6 +337,7 @@ class Duck < Ui
         @cleanliness = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -343,6 +349,7 @@ class Duck < Ui
         @health = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -354,6 +361,7 @@ class Duck < Ui
         @sleepiness = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -365,6 +373,7 @@ class Duck < Ui
         @energy = value
         checking
         save_db
+        @html.html_for_pet(@name, return_array, @emoji)
         puts show_stats
         puts "If you want to change something else use commands for superadmin
         else use command 'exit'"
@@ -376,9 +385,10 @@ class Duck < Ui
     end
   end
 
-  def add_money
-    puts "Enter how much money you want to add"
-    @money = gets.chomp.to_i
+  def add_money # Так как в моей реализации можно играть только за утку, то вместо задания изменять
+    #             тип питомца, буду изменять количество денег
+    puts "Cheat code activated"
+    @money += 250000
     puts show_stats
   end
 
@@ -405,7 +415,7 @@ class Duck < Ui
       *Use kill to kill your pet (Only for superadmin)
       *Use reset to reset your pet to default (Only for superadmin)
       *Use new_login to change login (Only for superadmin)
-      *Use money to change money balance(only for super admin)\x1b[0m
+      *Use HESOYAM to change money balance(only for super admin)\x1b[0m
       *Use 'help' to get menu with instruction"
     end
 

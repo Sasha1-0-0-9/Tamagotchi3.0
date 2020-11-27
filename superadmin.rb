@@ -11,7 +11,7 @@ class Superadmin < User
   	change_state to change parameters of your pet
   	reset to reset all points to default
   	new_login to change login
-  	money to change pet's money balance"
+  	HESOYAM to add 250000$" # минутка ностальгии :D
   end
 
   def commands(pet)
@@ -70,7 +70,7 @@ class Superadmin < User
   		when "new_login"
   			pet.change_login
   			x = gets.chomp.to_s
-  		when "money"
+  		when "HESOYAM"
 				pet.add_money
 				x = gets.chomp.to_s
   		when  "help"
